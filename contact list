@@ -1,0 +1,34 @@
+contacts = []
+
+while(True):
+
+    response = input('Add new contact(1), show contacts(2) or stop(3)? ')
+    if response == '3':
+        break
+    
+    elif response == '1':
+        person_name = input('Name: ')
+        person_surname = input('Surname: ')
+        person_phone = input('Phone: ')
+        person_email = input('Email: ')
+
+        person_contact = {
+            'name': person_name,
+            'surname': person_surname,
+            'phone': person_phone,
+            'email': person_email
+        }
+
+        contacts.append(person_contact)
+
+    elif response == '2':
+        print(f'You have {len(contacts)} contact(s): ')
+        for i in range(len(contacts)):
+            print('---CONTACT---')
+            print(contacts[i]["name"],end=" ")
+            print(contacts[i]["surname"]) 
+            print("Phone: ",contacts[i]["phone"])
+            print("Email: ",contacts[i]["email"])
+    
+    else:
+        print('Please choose 1, 2 or 3! Try again! ')
